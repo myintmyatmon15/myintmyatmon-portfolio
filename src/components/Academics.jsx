@@ -30,24 +30,25 @@ const EducationCard = memo(({ education }) => {
   return (
     <motion.div
       variants={itemVariants}
-      className="bg-white/10 dark:bg-black/20 border border-white/10 rounded-2xl p-6 flex items-center gap-6"
+      // Light Mode မှာ အဖြူရောင် background ပိုလင်းစေပြီး စာသားအရောင်ကို dark ဖြစ်အောင် ညှိထားပါတယ်
+      className="bg-white/80 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl p-6 flex items-center gap-6 shadow-sm dark:shadow-none"
     >
-      <div className="w-16 h-16 flex-shrink-0 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center rounded-full overflow-hidden">
+      <div className="w-16 h-16 flex-shrink-0 bg-white dark:bg-neutral-800 flex items-center justify-center rounded-full shadow-inner overflow-hidden border border-slate-100 dark:border-none">
         <img
           src={logo}
           alt={alt}
-          className="w-full h-full object-contain rounded-lg"
+          className="w-10 h-10 object-contain"
         />
       </div>
       <div className="flex flex-col text-left">
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
-        <p className="text-white/90 font-medium">{program}</p>
-        <div className="text-white/70 mt-2 text-sm">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
+        <p className="text-slate-700 dark:text-white/90 font-medium">{program}</p>
+        <div className="text-slate-500 dark:text-white/70 mt-2 text-sm">
           <p>
-            <span className="font-medium">Year:</span> {year}
+            <span className="font-semibold text-slate-700 dark:text-white/80">Year:</span> {year}
           </p>
           <p>
-            <span className="font-medium">{scoreLabel}:</span> {score}
+            <span className="font-semibold text-slate-700 dark:text-white/80">{scoreLabel}:</span> {score}
           </p>
         </div>
       </div>
@@ -88,11 +89,12 @@ const AcademicsComponent = memo(function Academics() {
           variants={itemVariants}
           className="flex flex-col items-center text-center"
         >
-          <h2 className="text-4xl sm:text-6xl font-bold mb-6 flex items-center gap-4 text-white">
-            <GraduationCap className="w-10 h-10 text-white" />
+          {/* Header text color ကို mode အလိုက် ပြောင်းပေးထားပါတယ် */}
+          <h2 className="text-4xl sm:text-6xl font-bold mb-6 flex items-center gap-4 text-slate-900 dark:text-white">
+            <GraduationCap className="w-10 h-10 text-slate-900 dark:text-white" />
             Education
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-slate-600 dark:text-white/70 max-w-2xl mx-auto mb-12">
             My academic background in Computer Science has provided me with a
             strong foundation in problem-solving and engineering principles. I
             have consistently focused on bridging theoretical knowledge with
