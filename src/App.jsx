@@ -12,7 +12,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Academics from "./components/Academics";
 import Projects from "./components/Projects";
-import CP from "./components/CP";
+import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
 
@@ -35,11 +35,11 @@ export const StaticBackground = memo(({ theme }) => {
   };
 
   const darkStyles = {
-    backgroundColor: 'hsl(222, 47%, 11%)', // A deep, professional navy blue
+    backgroundColor: 'hsl(200, 47%, 11%)', // A deep, professional navy blue
     backgroundImage: `
-      /* Faint, large radial gradients for a subtle glow effect */
-      radial-gradient(ellipse at 10% 10%, hsla(212, 96%, 15%, 0.8), transparent),
-      radial-gradient(ellipse at 90% 90%, hsla(260, 90%, 20%, 0.5), transparent),
+     
+      radial-gradient(ellipse at 10% 10%, hsla(270, 96%, 15%, 0.8), transparent),
+      radial-gradient(ellipse at 90% 90%, hsla(290, 90%, 20%, 0.5), transparent),
       /* The main grid pattern */
       linear-gradient(hsla(222, 47%, 13%, 1) 1.5px, transparent 1.5px),
       linear-gradient(to right, hsla(222, 47%, 13%, 1) 1.5px, hsl(222, 47%, 11%) 1.5px)
@@ -74,7 +74,7 @@ const AnimatedRoutes = memo(() => {
         { path: "/skills", Component: Skills },
         { path: "/academics", Component: Academics },
         { path: "/projects", Component: Projects },
-        { path: "/cp", Component: CP },
+        { path: "/experience", Component: Experience },
         { path: "/contact", Component: Contact },
     ];
     

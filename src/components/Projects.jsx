@@ -2,19 +2,16 @@ import React, { memo, useMemo } from "react";
 import { Code, ExternalLink, FolderKanban } from "lucide-react";
 import { motion } from "framer-motion";
 
-// --- Animation Variants (The "Staggered Entrance" Pattern) ---
-// This container will orchestrate the animation for the whole page
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Time delay between each child animating in
+      staggerChildren: 0.15,
     },
   },
 };
 
-// This variant will be used by each item in the container
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -27,11 +24,8 @@ const itemVariants = {
   },
 };
 
-
-// --- Child Component (No changes needed) ---
 const ProjectCard = memo(({ project }) => {
   return (
-    // This card is now an item in the grid's stagger animation
     <motion.div
       variants={itemVariants}
       className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow p-6 flex flex-col h-full"
@@ -75,45 +69,89 @@ const ProjectCard = memo(({ project }) => {
 });
 ProjectCard.displayName = "ProjectCard";
 
-
-// --- Main Projects Component ---
 function ProjectsComponent() {
   const projectsData = useMemo(
     () => [
-      { title: "Text File Compressor", desc: "Built a robust, lossless text file compressor in C++ using the LZW algorithm, applying OOP and advanced algorithms. Achieved ~44% file size reduction on real-world files with efficient compression and decompression.", tags: ["C++", "LZW Algorithm", "OOPS"], links: [{ type: "code", href: "https://github.com/shashank2401/file-compressor-in-cpp" }] },
-      { title: "Pathfinding Visualizer", desc: "Interactive C++/SFML visualizer for Dijkstra's and A* algorithms. Features dynamic obstacles, diagonal movement, OOP, and optimized data structures for smooth, real-time animations.", tags: ["C++", "SFML", "Dijkstra's", "A*", "OOPS", "Data Structures"], links: [{ type: "code", href: "https://github.com/shashank2401/pathfinding-visualizer-in-cpp" }] },
-      { title: "Codeforces Visualizer", desc: "A minimal web app to view and compare Codeforces profiles. Shows key stats, rating history, and performance trends with clean visualizations. Built for fast, distraction-free, side-by-side comparisons.", tags: ["React", "Vite", "JavaScript", "Tailwind CSS", "Codeforces API"], links: [{ type: "demo", href: "https://cf-visualizer-rho.vercel.app" }, { type: "code", href: "https://github.com/shashank2401/cf-visualizer" }] },
-      { title: "GitHub Profile Visualizer", desc: "A dynamic app for exploring and comparing GitHub user profiles. Visualizes rich statistics, activity timelines, and repository insights, including a contribution heatmap. Supports side-by-side comparisons and offers both dark and light modes.", tags: ["React", "Vite", "JavaScript", "Tailwind CSS", "GitHub API"], links: [{ type: "demo", href: "https://github-profile-visualizer-six.vercel.app/" }, { type: "code", href: "https://github.com/shashank2401/github-profile-visualizer" }] },
-      { title: "Weather App", desc: "A sleek, responsive weather application delivering real-time weather updates for any city. Features location-based forecasts, intuitive search suggestions, and seamless toggling between Celsius and Fahrenheit.", tags: ["HTML", "CSS", "JavaScript", "Weather API", "Responsive Design"], links: [{ type: "demo", href: "https://weather-app-zeta-three-62.vercel.app/" }, { type: "code", href: "https://github.com/shashank2401/weather-app" }] },
-      { title: "Soil-Water Characteristic Curve Prediction", desc: "Used Artificial Neural Networks (ANNs) to predict SWCC parameters from soil properties for plastic soils. Improved geotechnical prediction for slope stability and foundation design.", tags: ["Python", "TensorFlow", "ANN", "Soil Mechanics", "Data Analysis"], links: [{ type: "code", href: "https://github.com/shashank2401/swcc-prediction-using-ann" }] },
+      {
+        title: "Lumina Mon E-Commerce",
+        desc: "Built with Next.js 14 and TypeScript for speed and code reliability. It features a real-time shopping cart powered by React Context and a premium, mobile-first UI designed with Tailwind CSS. The project ensures a smooth user journey from product discovery to a streamlined checkout.",
+        tags: [
+          "NextJS14",
+          "TypeScript",
+          "React",
+          "TailwindCSS",
+          "ResponsiveDesign",
+          "ContextAPI",
+          "Frontend Development",
+          "UI/UX",
+        ],
+        links: [
+          { type: "demo", href: "https://lumina-mon-ecommerce.vercel.app/" },
+          {
+            type: "code",
+            href: "https://github.com/myintmyatmon15/lumina-mon-ecommerce.git",
+          },
+        ],
+      },
+      {
+        title: "CineStream – Movie Discovery App",
+        desc: "A fast movie discovery platform built with Next.js that integrates with external APIs to fetch real-time data. It features dynamic routing for movie details and a responsive UI for a seamless browsing experience. This project focuses on efficient data fetching and optimized image rendering.",
+        tags: [
+          "NextJS",
+          "React",
+          "APIIntegration",
+          "ResponsiveDesign",
+          "WebPerformance",
+        ],
+        links: [
+          { type: "demo", href: "" },
+          {
+            type: "code",
+            href: "https://github.com/myintmyatmon15/Movie_Next_project.git",
+          },
+        ],
+      },
+      {
+        title: "NewsHub – Full-Stack News Platform",
+        desc: "A comprehensive news management system built using the MERN Stack. It features a custom Node.js/Express backend and MongoDB database to handle article storage and retrieval. This project demonstrates full-stack capability through secure CRUD operations and a clean React-based user interface.",
+        tags: ["MERNStack", "NodeJS", "MongoDB", "FullStack", "RESTAPI"],
+        links: [
+          { type: "demo", href: "" },
+          {
+            type: "code",
+            href: "https://github.com/myintmyatmon15/News_Media.git",
+          },
+        ],
+      },
     ],
-    []
+    [],
   );
 
   return (
     <div className="w-full min-h-[80vh] flex flex-col items-center justify-center px-4 py-12">
-      {/* 1. This is the SINGLE animation container for the whole page. */}
-      {/* It uses `animate`, not `whileInView`, for guaranteed execution. */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="flex flex-col items-center w-full"
       >
-        {/* Item 1: The header text block */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
-                <FolderKanban className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
-                Projects
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-10">
-                Here are some of the projects I've worked on, ranging from algorithm visualizers and utilities to frontend tools and machine learning models. Each project reflects my passion for clean design, efficient problem-solving, and practical implementation.
-            </p>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center text-center"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
+            <FolderKanban className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
+            Projects
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-10">
+            Here are some of the projects I’ve worked on, ranging from
+            interactive web tools to complex frontend applications. I am
+            dedicated to building user-centric solutions with a strong emphasis
+            on clean design, performance, and maintainable code.
+          </p>
         </motion.div>
 
-        {/* Item 2: The entire project card grid animates in as one block... */}
         <motion.div
-          // It is ALSO a container for its own children (the cards)
           variants={containerVariants}
           className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
@@ -126,5 +164,4 @@ function ProjectsComponent() {
   );
 }
 
-// Export the memoized component in a standard way
 export default memo(ProjectsComponent);

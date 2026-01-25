@@ -86,10 +86,12 @@ SkillSection.displayName = "SkillSection";
 
 // --- Static Data (No changes needed) ---
 const SKILLS_SECTIONS = [
-    { icon: <Code className="w-6 h-6" />, title: "Programming Languages", tags: ["C", "C++", "Java", "JavaScript", "Python", "HTML", "CSS"] },
-    { icon: <Layers className="w-6 h-6" />, title: "Frameworks & Libraries", tags: ["React", "Tailwind CSS", "SFML", "NumPy", "Pandas"] },
-    { icon: <Terminal className="w-6 h-6" />, title: "Tools & Platforms", tags: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Sublime Text"] },
-    { icon: <Sparkles className="w-6 h-6" />, title: "Interests", tags: ["Competitive Programming", "DSA", "Machine Learning", "Web Development"] },
+    { icon: <Code className="w-6 h-6" />, title: "Programming Languages", tags: ["JavaScript(ES6+)","TypeScript", "HTML5", "CSS3","C","C++"] },
+    { icon: <Layers className="w-6 h-6" />, title: "Frontend Frameworks", tags: ["React.js", "Next.js", "Tailwind CSS","Bootstrap"] },
+    { icon: <Layers className="w-6 h-6" />, title: "State Management", tags: ["Redux Toolkit", "Hook", "Context API"] },
+    { icon: <Layers className="w-6 h-6" />, title: "Backend / DB (MERN)", tags: ["Node.js", "Express", "MongoDB"] },
+    { icon: <Terminal className="w-6 h-6" />, title: "Developer Tools", tags: ["Git &GitHub", "Vite", "VS code", "Postman","Chrome DevTools"] },
+    { icon: <Sparkles className="w-6 h-6" />, title: "Interests", tags: ["UI/UX Design", "Web Performance", "Responsive Design", "State Management"] },
 ];
 
 
@@ -101,8 +103,6 @@ const SkillsComponent = memo(function Skills() {
 
   return (
     <div className="w-full min-h-[80vh] flex flex-col items-center justify-center px-4 py-12">
-      {/* 1. This is the SINGLE animation container for the whole page. */}
-      {/* It uses `animate`, not `whileInView`, for guaranteed execution. */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -116,9 +116,7 @@ const SkillsComponent = memo(function Skills() {
                 Skills & Interests
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                Here you'll find a snapshot of my technical toolkit and passions. I
-                believe in learning by doing, and my skills reflect a blend of academic
-                depth and hands-on project work.
+                Here you'll find the core technologies, tools, and interest that I specialize in as a Frontend Developer.
             </p>
         </motion.div>
         

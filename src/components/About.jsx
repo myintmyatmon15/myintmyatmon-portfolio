@@ -2,7 +2,6 @@ import { Github, Linkedin, Mail, FileText, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useMemo, memo } from "react";
 
-// Memoized social link component
 const SocialLink = memo(({ href, icon, title, className }) => (
   <a
     href={href}
@@ -16,7 +15,6 @@ const SocialLink = memo(({ href, icon, title, className }) => (
 ));
 SocialLink.displayName = "SocialLink";
 
-// Memoized tag component
 const Tag = memo(({ tag }) => (
   <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all">
     {tag}
@@ -26,33 +24,32 @@ Tag.displayName = "Tag";
 
 const SOCIAL_LINKS = [
   {
-    href: "https://github.com/shashank2401",
+    href: "https://github.com/myintmyatmon15",
     icon: <Github className="w-5 h-5" />,
     title: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/shashankraj2401/",
+    href: "https://linkedin.com/in/myint-myat-mon-64a156342/",
     icon: <Linkedin className="w-5 h-5" />,
     title: "LinkedIn",
   },
   {
-    href: "mailto:shashankraj0124@gmail.com",
+    href: "mailto:myintmyatmon1521@gmail.com",
     icon: <Mail className="w-5 h-5" />,
     title: "Email",
   },
 ];
 
 const TAGS = [
-  "Competitive Programming",
-  "Data Structures",
-  "Algorithms",
-  "C++",
-  "Problem Solving",
-  "Web Development",
+  "React.js",
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "MERN Architecture",
 ];
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1FIq3CNO73-M9GXjIhZAYo49gQGxgmudO/view?usp=sharing";
+  "https://drive.google.com/file/d/1iOyoEA_hisO-v4tdPhTIiuASkRrzMvve/view?usp=drive_link";
 
 export default memo(function About() {
   const socialLinksElements = useMemo(
@@ -66,12 +63,12 @@ export default memo(function About() {
           className="w-11 h-11 flex items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:scale-105 transition-all"
         />
       )),
-    []
+    [],
   );
 
   const tagElements = useMemo(
     () => TAGS.map((tag) => <Tag key={tag} tag={tag} />),
-    []
+    [],
   );
 
   return (
@@ -82,18 +79,17 @@ export default memo(function About() {
       className="w-full min-h-[80vh] flex items-center justify-center"
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-5xl px-4 py-12">
-        {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="flex-shrink-0 w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-white dark:border-neutral-900 shadow-md bg-neutral-200 dark:bg-neutral-800"
           tabIndex={0}
-          aria-label="Profile photo of Shashank Raj"
+          aria-label="Profile photo of Myint Myat Mon"
         >
           <img
             src="/assets/MyPhotograph.png"
-            alt="Shashank Raj"
+            alt="Myint Myat Mon"
             loading="lazy"
             decoding="async"
             className="object-cover w-full h-full"
@@ -101,7 +97,6 @@ export default memo(function About() {
           />
         </motion.div>
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -116,26 +111,22 @@ export default memo(function About() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-3 text-foreground text-center md:text-left">
-            Hi, I'm{" "}
+            Hi! I&apos;m{" "}
             <span className="bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-600 dark:from-white dark:via-neutral-300 dark:to-neutral-400 bg-clip-text text-transparent">
-              Shashank Raj
+              Myint Myat Mon
             </span>
           </h1>
 
           <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm mb-2">
             <GraduationCap className="w-4 h-4" />
-            <span>IIT (BHU) Varanasi</span>
+            <span>(B.C.Sc) Myanmar</span>
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-center md:text-left">
-            I'm a passionate student with a strong interest in{" "}
-            <span className="text-foreground font-medium">
-              competitive programming
-            </span>{" "}
-            and tackling challenging problems. I love crafting efficient
-            solutions and exploring new technologies. My journey in tech
-            combines rigorous academic training with hands-on project
-            experience.
+            Frontend Developer with 2 years of React.js and Next.js and 4 years
+            of Software Engineer foundation.Experienced in MERN architecture and
+            performance tuning.Actively seeking a Frontend Developer role in
+            Singapore.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">

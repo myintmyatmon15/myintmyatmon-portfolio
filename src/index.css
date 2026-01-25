@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
 
-/* ENHANCED ROOT SETTINGS */
 html {
   scroll-padding-top: 80px;
   scroll-behavior: smooth;
@@ -13,7 +11,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* PREFERS REDUCED MOTION SUPPORT */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -26,27 +23,22 @@ html {
   }
 }
 
-/* HAMBURGER ANIMATION (Compatible with React component) */
 .hamburger {
   touch-action: manipulation;
 }
 
 .hamburger span {
-  /* Let React handle all animations, just ensure consistent thickness */
-  height: 2px !important; /* Match your React component's h-[2px] */
+  height: 2px !important; 
 }
 
 .hamburger:hover span {
-  /* Optional: Add subtle hover effect that doesn't conflict */
   filter: brightness(1.1);
 }
 
-/* ENHANCED SIDE NAV PANEL (Fixed) */
 .side-nav-panel {
   transition: right 0.35s cubic-bezier(0.4, 2.08, 0.55, 0.44);
   will-change: transform, opacity;
   pointer-events: auto;
-  /* Keep your original positioning logic */
 }
 
 .side-nav-panel.open {
@@ -61,7 +53,6 @@ html {
   pointer-events: none;
 }
 
-/* ENHANCED CLOSE BUTTON */
 .close-btn {
   @apply relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-muted hover:bg-muted-foreground/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary;
   transform-origin: center;
@@ -75,7 +66,6 @@ html {
   transform: rotate(90deg) scale(0.95);
 }
 
-/* ENHANCED GLOBAL LINK STYLES */
 a {
   @apply text-foreground transition-all duration-200 relative;
   text-decoration: none;
@@ -92,7 +82,6 @@ a:focus-visible {
   @apply outline-2 outline-primary rounded-sm;
 }
 
-/* Enhanced link underline effect */
 a:not(.no-underline):hover::after {
   content: '';
   @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-200;
@@ -110,13 +99,11 @@ a:not(.no-underline):hover::after {
   color: var(--color-primary);
 }
 
-/* ENHANCED SIDE NAV PANEL STYLES */
 .side-nav-panel a {
   font-weight: 500;
   transition: color 0.2s ease-in-out;
 }
 
-/* ENHANCED ANCHOR LINK STABILITY */
 a[href^="#"] {
   @apply inline-block opacity-100 visible transition-all duration-200;
 }
@@ -125,7 +112,6 @@ a[href^="#"]:hover {
   @apply transform translate-x-1;
 }
 
-/* ENHANCED SCROLLBAR STYLING */
 ::-webkit-scrollbar {
   @apply w-2;
 }
@@ -143,7 +129,6 @@ a[href^="#"]:hover {
   @apply bg-muted-foreground/50;
 }
 
-/* ENHANCED FOCUS INDICATORS */
 *:focus-visible {
   @apply outline-2 outline-offset-2 outline-primary;
 }
@@ -153,7 +138,6 @@ button:focus-visible,
   @apply outline-2 outline-offset-2 outline-primary;
 }
 
-/* SELECTION STYLING */
 ::selection {
   @apply bg-primary/20 text-foreground;
 }
@@ -162,7 +146,6 @@ button:focus-visible,
   @apply bg-primary/30 text-foreground;
 }
 
-/* ENHANCED THEME VARIABLES */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -170,7 +153,6 @@ button:focus-visible,
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   
-  /* Enhanced color mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -203,20 +185,17 @@ button:focus-visible,
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Enhanced custom colors */
   --color-primary-dark-hover: var(--primary-dark-hover);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-info: var(--info);
   
-  /* Animation variables */
   --animation-duration-fast: 150ms;
   --animation-duration-normal: 250ms;
   --animation-duration-slow: 350ms;
   --animation-ease-out: cubic-bezier(0.4, 2.08, 0.55, 0.44);
   --animation-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Shadow variables */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -257,7 +236,6 @@ button:focus-visible,
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
 
-  /* Enhanced colors */
   --primary-dark-hover: oklch(0.15 0.005 285.885);
   --success: oklch(0.6 0.17 145);
   --warning: oklch(0.8 0.15 85);
@@ -297,14 +275,12 @@ button:focus-visible,
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
 
-  /* Enhanced dark mode colors */
   --primary-dark-hover: oklch(0.65 0.015 286.32);
   --success: oklch(0.5 0.15 145);
   --warning: oklch(0.7 0.12 85);
   --info: oklch(0.6 0.1 220);
 }
 
-/* UTILITY CLASSES */
 .glass {
   @apply bg-card/80 backdrop-blur-md border border-border/50;
 }
