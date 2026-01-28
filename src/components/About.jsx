@@ -49,7 +49,7 @@ const TAGS = [
 ];
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1iOyoEA_hisO-v4tdPhTIiuASkRrzMvve/view?usp=drive_link";
+  "https://drive.google.com/file/d/1Mz8XUT-J76Rl8zsGgttMsz18GxoPtMxT/view?usp=drive_link";
 
 export default memo(function About() {
   const socialLinksElements = useMemo(
@@ -123,10 +123,7 @@ export default memo(function About() {
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-center md:text-left">
-            Frontend Developer with 2 years of React.js and Next.js and 4 years
-            of Software Engineer foundation.Experienced in MERN architecture and
-            performance tuning.Actively seeking a Frontend Developer role in
-            Singapore.
+            Frontend Developer with 2+ years of professional experience in React.js and Next.js. Proficient in the MERN stack, focusing on performance, responsive web application development.Passionate about clean code and performance optimization. Currently seeking new opportunities in Singapore to contribute and grow.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
