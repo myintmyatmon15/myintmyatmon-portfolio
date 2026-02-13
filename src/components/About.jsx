@@ -49,7 +49,7 @@ const TAGS = [
 ];
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1Mz8XUT-J76Rl8zsGgttMsz18GxoPtMxT/view?usp=drive_link";
+  "https://drive.google.com/file/d/1FiD7SYWNuvL5h6ubrM2uf2nJU101eDej/view?usp=drive_link";
 
 export default memo(function About() {
   const socialLinksElements = useMemo(

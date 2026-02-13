@@ -59,7 +59,7 @@ const experiences = [
     role: "Software Engineer (Quality & Systems)",
     company: "Marelli Engineering",
     location: "Yangon, Myanmar",
-    period: "Dec 2018 – Jun 2023",
+    period: "Dec 2018 – Jun 2021",
     logo: "/assets/logos/Marelli-logo.jpg",
     tags: [
       "EmbeddedSystems",
