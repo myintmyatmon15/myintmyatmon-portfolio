@@ -48,8 +48,8 @@ const TAGS = [
   "MERN Architecture",
 ];
 
-const RESUME_URL =
-  "https://drive.google.com/file/d/1FiD7SYWNuvL5h6ubrM2uf2nJU101eDej/view?usp=drive_link";
+// const RESUME_URL =
+//   "https://drive.google.com/file/d/1FiD7SYWNuvL5h6ubrM2uf2nJU101eDej/view?usp=drive_link";
 
 export default memo(function About() {
   const socialLinksElements = useMemo(
@@ -122,8 +122,8 @@ export default memo(function About() {
             <span>(B.C.Sc) Myanmar</span>
           </div>
 
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-center md:text-left">
-            Frontend Developer with 2+ years of professional experience in React.js and Next.js. Proficient in the MERN stack, focusing on performance, responsive web application development.Passionate about clean code and performance optimization. Currently seeking new opportunities in Singapore to contribute and grow.
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-justify ">
+            CS graduate and Frontend Developer with 2+ years of experience specializing in Next.js 14, React, and TypeScript. Proven track record in building high-performance eCommerce solutions and scalable UI components, successfully optimizing load speeds by 30%. Experienced in collaborating with UI/UX designers to deliver pixel-perfect client projects and integrating complex RESTful APIs. Actively seeking to contribute to Singapore's tech ecosystem and ready to relocate to join my family.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
@@ -132,7 +132,7 @@ export default memo(function About() {
 
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {socialLinksElements}
-            <a
+            {/* <a
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -140,7 +140,7 @@ export default memo(function About() {
             >
               <FileText className="w-4 h-4" />
               Resume
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>

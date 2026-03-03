@@ -29,7 +29,7 @@ const itemVariants = {
 
 const experiences = [
   {
-    role: "Full Stack Developer",
+    role: "Front-End Developer",
     company: "Code Lab Technology",
     location: "Myanmar",
     period: "Feb 2024 – Oct 2025",
@@ -47,16 +47,15 @@ const experiences = [
       "ComponentDesign",
     ],
     points: [
-      "Built full-stack MERN apps by connecting React frontends with Node.js/Express backends.",
-      "Created 10+ reusable UI components with Tailwind CSS, speeding up development by 20%.",
-      "Set up secure login and user access systems using JWT authentication.",
-      "Managed cloud databases with MongoDB Atlas for data storage and CRUD operations.",
-      "Used React Hooks and Redux for state management, making pages render 30% faster.",
-      "Used Clean Architecture to write neat, reusable, and production-ready code.",
+      "Developed responsive web applications using React and TypeScript,prioritizing clean and modular code.",
+      "Collaborated with UI/UX designers to implement pixel-perfect layouts using Tailwind CSS. ",
+      "Created 10+ reusable UI components, improving team development efficiency by 20%. ",
+      "Integrated RESTful APIs to manage dynamic data and ensure smooth user workflows. ",
+      
     ],
   },
   {
-    role: "Software Engineer (Quality & Systems)",
+    role: "Junior Software Engineer (Quality & Systems)",
     company: "Marelli Engineering",
     location: "Yangon, Myanmar",
     period: "Dec 2018 – Jun 2021",
@@ -72,11 +71,9 @@ const experiences = [
       "ProblemSolving",
     ],
     points: [
-      "Improved the quality and reliability of large-scale automotive software systems.",
-      "Checked C/C++ logic to find and fix math and boundary errors in the code.",
-      "Validated over 300 system variables using Imagix to ensure data accuracy.",
-      "Solved 50+ system defects, helping teams reach a 98% sprint completion rate.",
-      "Wrote technical guides and documents to help new team members get started quickly.",
+      "Supported software reliability by identifying and resolving over 50 system defects.",
+      "Assisted senior engineers in meeting technical requirements and project deadlines.",
+      "Maintained high data accuracy through systematic logic checks and validation processes.",
     ],
   },
 ];
