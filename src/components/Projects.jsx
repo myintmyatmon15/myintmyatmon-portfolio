@@ -94,17 +94,17 @@ function ProjectsComponent() {
         ],
       },
       {
-        title: "CineStream – Movie Discovery App",
-        desc: "A fast movie discovery platform built with Next.js that integrates with external APIs to fetch real-time data. It features dynamic routing for movie details and a responsive UI for a seamless browsing experience. This project focuses on efficient data fetching and optimized image rendering.",
+        title: "CosmoFlix : Premium Media",
+        desc: "Developed a modern, dynamic web dashboard for movie exploration featuring responsive custom UI components. Implemented functional routing and layout components, integrating public REST APIs for real-time content fetching, genre-based navigation, and text-based multi-criteria searches.",
         tags: [
           "NextJS",
-          "React",
+          "TypeScript",
           "APIIntegration",
           "ResponsiveDesign",
           "WebPerformance",
         ],
         links: [
-          { type: "demo", href: "" },
+          { type: "demo", href: "https://cosmoflixproject.vercel.app/" },
           {
             type: "code",
             href: "https://github.com/myintmyatmon15/Movie_Next_project.git",
@@ -112,7 +112,7 @@ function ProjectsComponent() {
         ],
       },
       {
-        title: "NewsHub – Full-Stack News Platform",
+        title: "NewsHub – Full-Stack News",
         desc: "A comprehensive news management system built using the MERN Stack. It features a custom Node.js/Express backend and MongoDB database to handle article storage and retrieval. This project demonstrates full-stack capability through secure CRUD operations and a clean React-based user interface.",
         tags: ["MERNStack", "NodeJS", "MongoDB", "FullStack", "RESTAPI"],
         links: [
