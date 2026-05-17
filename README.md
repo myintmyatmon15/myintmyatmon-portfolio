@@ -1,4 +1,4 @@
-# Personal Portfolio Website - Shashank Raj
+# Personal Portfolio Website - Myint Myat Mon
 
 A clean, modern, and highly performant personal portfolio website built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**. This template is designed to be easily customizable and showcases a professional, animation-rich user interface.
 
