@@ -56,8 +56,7 @@ const experiences = [
     period: "Dec 2018 – Jun 2021",
     logo: "/assets/logos/Marelli-logo.jpg",
     tags: [
-      "EmbeddedSystems",
-      "CCPP",
+      
       "System Validation",
       "AutomotiveSoftware",
       "QualityAssurance",

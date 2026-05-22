@@ -1,19 +1,6 @@
-import { Github, Linkedin, Mail, FileText, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useMemo, memo } from "react";
-
-const SocialLink = memo(({ href, icon, title, className }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={className}
-    title={title}
-  >
-    {icon}
-  </a>
-));
-SocialLink.displayName = "SocialLink";
 
 const Tag = memo(({ tag }) => (
   <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all">
@@ -22,50 +9,15 @@ const Tag = memo(({ tag }) => (
 ));
 Tag.displayName = "Tag";
 
-const SOCIAL_LINKS = [
-  {
-    href: "https://github.com/myintmyatmon15",
-    icon: <Github className="w-5 h-5" />,
-    title: "GitHub",
-  },
-  {
-    href: "https://linkedin.com/in/myint-myat-mon-64a156342/",
-    icon: <Linkedin className="w-5 h-5" />,
-    title: "LinkedIn",
-  },
-  {
-    href: "mailto:myintmyatmon1521@gmail.com",
-    icon: <Mail className="w-5 h-5" />,
-    title: "Email",
-  },
-];
-
 const TAGS = [
   "React.js",
   "Next.js",
+  "Node.js",
+  "JavaScript",
   "TypeScript",
   "Tailwind CSS",
-  "MERN Architecture",
 ];
-
-// const RESUME_URL =
-//   "https://drive.google.com/file/d/1FiD7SYWNuvL5h6ubrM2uf2nJU101eDej/view?usp=drive_link";
-
-export default memo(function About() {
-  const socialLinksElements = useMemo(
-    () =>
-      SOCIAL_LINKS.map(({ href, icon, title }) => (
-        <SocialLink
-          key={title}
-          href={href}
-          icon={icon}
-          title={title}
-          className="w-11 h-11 flex items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:scale-105 transition-all"
-        />
-      )),
-    [],
-  );
-
+function AboutComponent() {
   const tagElements = useMemo(
     () => TAGS.map((tag) => <Tag key={tag} tag={tag} />),
     [],
@@ -126,24 +78,13 @@ export default memo(function About() {
             Motivated and detail-oriented Junior Frontend Developer with hands-on experience building dynamic, responsive web applications using React 18, Next.js 14, and TypeScript. Proven ability in transforming Figma wireframes into pixel-perfect, mobile-first user interfaces using Tailwind CSS. Committed to maintaining clean code standards, collaborating within agile engineering teams, and delivering reliable frontend features.
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-2 mb-4 justify-center items-center md:justify-start">
             {tagElements}
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            {socialLinksElements}
-            {/* <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 h-11 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:scale-105 transition-all"
-            >
-              <FileText className="w-4 h-4" />
-              Resume
-            </a> */}
-          </div>
         </motion.div>
       </div>
     </motion.div>
   );
-});
+}
+export default memo(AboutComponent);

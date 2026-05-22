@@ -25,44 +25,59 @@ const itemVariants = {
 };
 
 const ProjectCard = memo(({ project }) => {
+  const demoLink = project.links.find((l) => l.type === "demo")?.href;
+  const codeLink = project.links.find((l) => l.type === "code")?.href;
+
   return (
     <motion.div
       variants={itemVariants}
-      className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow p-6 flex flex-col h-full"
+      className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow-sm overflow-hidden flex flex-col h-full"
     >
-      <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">
-        {project.title}
-      </h3>
-      <p className="text-base text-muted-foreground mb-4 flex-grow">
-        {project.desc}
-      </p>
-      <div className="flex flex-wrap gap-2 mb-5 mt-auto">
-        {project.tags.map((tag, tagIndex) => (
-          <span
-            key={tagIndex}
-            className="px-3 py-1 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-600"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-      <div className="flex gap-4 flex-wrap">
-        {project.links.map((link, linkIndex) => (
-          <a
-            key={linkIndex}
-            href={link.href}
-            className="flex items-center gap-2 text-primary font-semibold text-sm hover:underline hover:text-foreground dark:hover:text-primary-foreground/60 transition-colors duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link.type === "code" ? (
-              <Code className="w-4 h-4" />
-            ) : (
-              <ExternalLink className="w-4 h-4" />
-            )}
-            {link.type === "code" ? "Code" : "Demo"}
-          </a>
-        ))}
+      {project.image && (
+        <div className="w-full h-48 overflow-hidden relative border-b border-neutral-200 dark:border-neutral-700">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black/5 dark:bg-black/10 pointer-events-none" />
+        </div>
+      )}
+
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold text-foreground mb-2 leading-tight">
+          {project.title}
+        </h3>
+        
+        <p className="text-base sm:text-m text-muted-foreground leading-relaxed max-w-lg mb-4 text-justify ">
+          {project.desc}
+        </p>
+
+        <div className="flex gap-4 pt-2">
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-1 py-3 bg-white text-black dark:bg-black dark:text-white rounded-full text-m font-semibold hover:opacity-90 transition-all duration-200 shadow-sm"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Demo
+            </a>
+          )}
+          
+          {codeLink && (
+            <a
+              href={codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-1 py-3 bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200 rounded-full text-xs font-semibold hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 transition-all duration-200"
+            >
+              <Code className="w-3.5 h-3.5" />
+              Code
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -74,17 +89,8 @@ function ProjectsComponent() {
     () => [
       {
         title: "Lumina Mon E-Commerce",
-        desc: "Built with Next.js 14 and TypeScript for speed and code reliability. It features a real-time shopping cart powered by React Context and a premium, mobile-first UI designed with Tailwind CSS. The project ensures a smooth user journey from product discovery to a streamlined checkout.",
-        tags: [
-          "NextJS14",
-          "TypeScript",
-          "React",
-          "TailwindCSS",
-          "ResponsiveDesign",
-          "ContextAPI",
-          "Frontend Development",
-          "UI/UX",
-        ],
+        desc: "Built with Next.js 14 and TypeScript, this e-commerce app features a real-time React Context shopping cart and a premium, mobile-first Tailwind CSS design for a seamless checkout journey.",
+        image: "/assets/LuminaMon.png",
         links: [
           { type: "demo", href: "https://lumina-mon-ecommerce.vercel.app/" },
           {
@@ -95,14 +101,8 @@ function ProjectsComponent() {
       },
       {
         title: "CosmoFlix : Premium Media",
-        desc: "Developed a modern, dynamic web dashboard for movie exploration featuring responsive custom UI components. Implemented functional routing and layout components, integrating public REST APIs for real-time content fetching, genre-based navigation, and text-based multi-criteria searches.",
-        tags: [
-          "NextJS",
-          "TypeScript",
-          "APIIntegration",
-          "ResponsiveDesign",
-          "WebPerformance",
-        ],
+        desc: "A modern movie exploration dashboard built with responsive UI components, functional routing, and public REST APIs for real-time content fetching, genre navigation, and multi-criteria searches.",
+        image: "/assets/CsomoFlix.png",
         links: [
           { type: "demo", href: "https://cosmoflixproject.vercel.app/" },
           {
@@ -113,10 +113,10 @@ function ProjectsComponent() {
       },
       {
         title: "NewsHub – Full-Stack News",
-        desc: "A comprehensive news management system built using the MERN Stack. It features a custom Node.js/Express backend and MongoDB database to handle article storage and retrieval. This project demonstrates full-stack capability through secure CRUD operations and a clean React-based user interface.",
-        tags: ["MERNStack", "NodeJS", "MongoDB", "FullStack", "RESTAPI"],
+        desc: "A full-stack news management system built on the MERN stack, featuring a custom Node.js/Express backend, MongoDB database for secure CRUD operations, and a clean React user interface.",
+        image: "/assets/logos/codelab.jpg",
         links: [
-          { type: "demo", href: "" },
+          { type: "demo", href: "#" },
           {
             type: "code",
             href: "https://github.com/myintmyatmon15/News_Media.git",
@@ -143,7 +143,7 @@ function ProjectsComponent() {
             <FolderKanban className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
             Projects
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-10">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-12">
             Here are some of the projects I’ve worked on, ranging from
             interactive web tools to complex frontend applications. I am
             dedicated to building user-centric solutions with a strong emphasis
