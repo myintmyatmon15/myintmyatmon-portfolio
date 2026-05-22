@@ -123,7 +123,7 @@ export default memo(function About() {
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-justify ">
-            CS graduate and Frontend Developer with 2+ years of experience specializing in Next.js 14, React, and TypeScript. Proven track record in building high-performance eCommerce solutions and scalable UI components, successfully optimizing load speeds by 30%. Experienced in collaborating with UI/UX designers to deliver pixel-perfect client projects and integrating complex RESTful APIs. Actively seeking to contribute to Singapore's tech ecosystem and ready to relocate to join my family.
+            Motivated and detail-oriented Junior Frontend Developer with hands-on experience building dynamic, responsive web applications using React 18, Next.js 14, and TypeScript. Proven ability in transforming Figma wireframes into pixel-perfect, mobile-first user interfaces using Tailwind CSS. Committed to maintaining clean code standards, collaborating within agile engineering teams, and delivering reliable frontend features.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
