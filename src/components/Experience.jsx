@@ -29,7 +29,7 @@ const itemVariants = {
 
 const experiences = [
   {
-    role: "Front-End Developer",
+    role: "Full Stack Developer / QA Support",
     company: "Code Lab Technology",
     location: "Myanmar",
     period: "Oct 2022 – Feb 2026",
@@ -40,12 +40,12 @@ const experiences = [
       "Next.js",
       "TailwindCSS",
       "REST APIs",
+      "Node.js",
+      "Unit Testing",
+      "Client Debugging"
     ],
     points: [
-      "Developed responsive web applications using React and TypeScript,prioritizing clean and modular code.",
-      "Collaborated with UI/UX designers to implement pixel-perfect layouts using Tailwind CSS. ",
-      "Created 10+ reusable UI components, improving team development efficiency by 20%. ",
-      "Integrated RESTful APIs to manage dynamic data and ensure smooth user workflows. ",
+      "Developed and implemented 12+ web-based business applications using React 18, Next.js, and TypeScript, improving rendering speed and user responsiveness by 20%","Managed secure backend data streams and RESTful API integrations using Node.js, processing over 15,000+ monthly server requests seamlessly via JSON workflows","Performed rigorous unit testing, UI validation, and client-side debugging, reducing software defects by 15% prior to production deployment","Maintained 100% comprehensive system design and technical documentation, accelerated code review efficiency and team onboarding times", "Utilized Git/GitHub for automated version control, CI/CD deployment via Vercel, and cross-functional Agile collaboration",
       
     ],
   },
@@ -63,11 +63,12 @@ const experiences = [
       "Imagix",
       "TechnicalDocumentation",
       "ProblemSolving",
+      "TestScripting",
+      "SIT/UAT Testing",
+      "Agile Methodology"
     ],
     points: [
-      "Supported software reliability by identifying and resolving over 50 system defects.",
-      "Assisted senior engineers in meeting technical requirements and project deadlines.",
-      "Maintained high data accuracy through systematic logic checks and validation processes.",
+      "Conducted system validation and functional testing within a fast-paced software deployment pipeline, maintaining 99.8% data consistency across modules","Drafted and executed 50+ automated and manual test scripts for critical System Integration Testing (SIT) and User Acceptance Testing (UAT) phases","Assisted senior engineers in troubleshooting and resolving 40+ complex software logic defects, resulting in a 10% boost to legacy software stability","Collaborated closely within an Agile cross-functional team to achieve complex product engineering delivery milestones 100% on schedule",
     ],
   },
 ];
@@ -137,7 +138,7 @@ const Experience = () => {
                 {exp.points.map((point, i) => (
                   <li
                     key={i}
-                    className="text-slate-600 dark:text-white/70 text-sm flex items-start leading-relaxed"
+                    className="text-slate-600 dark:text-white/70 text-sm flex items-start leading-relaxed text-justify"
                   >
                     <span className="text-slate-400 dark:text-white mr-3 mt-1">
                       ▹

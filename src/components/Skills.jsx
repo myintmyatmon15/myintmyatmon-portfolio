@@ -2,19 +2,16 @@ import React, { useState, useCallback, useMemo, memo } from "react";
 import { Code, Layers, Terminal, Sparkles, Settings2 } from "lucide-react";
 import { motion } from "framer-motion";
 
-// --- Animation Variants (The "Staggered Entrance" Pattern) ---
-// This container will orchestrate the animation for the whole page
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Time delay between each child animating in
+      staggerChildren: 0.15, 
     },
   },
 };
 
-// This variant will be used by each item in the container
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -27,7 +24,6 @@ const itemVariants = {
   },
 };
 
-// --- Child Components (No changes needed) ---
 const SkillTag = memo(({ tag, onMouseEnter, onMouseLeave, className }) => (
   <span
     onMouseEnter={onMouseEnter}
@@ -65,7 +61,6 @@ const SkillSection = memo(({ section, hoveredTag, onTagHover, onTagLeave }) => {
   );
 
   return (
-    // This card is now an item in the grid's stagger animation
     <motion.div
       variants={itemVariants}
       className="rounded-2xl bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 shadow p-6 flex flex-col"
@@ -84,18 +79,15 @@ const SkillSection = memo(({ section, hoveredTag, onTagHover, onTagLeave }) => {
 });
 SkillSection.displayName = "SkillSection";
 
-// --- Static Data (No changes needed) ---
 const SKILLS_SECTIONS = [
-    { icon: <Code className="w-6 h-6" />, title: "Programming Languages", tags: ["JavaScript(ES6+)","TypeScript", "HTML5", "CSS3","C","C++"] },
-    { icon: <Layers className="w-6 h-6" />, title: "Frontend Frameworks", tags: ["React.js", "Next.js", "Tailwind CSS","Bootstrap"] },
-    { icon: <Layers className="w-6 h-6" />, title: "State Management", tags: ["Redux Toolkit", "Hook", "Context API"] },
-    { icon: <Layers className="w-6 h-6" />, title: "Backend / DB (MERN)", tags: ["Node.js", "Express", "MongoDB"] },
-    { icon: <Terminal className="w-6 h-6" />, title: "Developer Tools", tags: ["Git &GitHub", "Vite", "VS code", "Postman","Chrome DevTools"] },
-    { icon: <Sparkles className="w-6 h-6" />, title: "Interests", tags: ["UI/UX Design", "Web Performance", "Responsive Design", "State Management"] },
+    { icon: <Code className="w-6 h-6" />, title: "Frontend Engineering",tags: ["React 18","Next.js(App Router)","JavaScript(ES6+)","TypeScript", "Tailwind CSS","Redux Toolkit","Context API","Responsive Design"] },
+    { icon: <Layers className="w-6 h-6" />, title: "Backend & Databases", tags: ["Node.js", "Express.js", "ASP.NET Core", "C# Foundation", "RESTful APIs Integration", "SQL Server", "MongoDB", "JSON/XML Data Structuring"] },
+    { icon: <Layers className="w-6 h-6" />, title: "QA Automation & Testing", tags: ["Unit Testing", "Logic Debugging", "Testing Scripting", "System Validation", "SIT/UAT Testing", "Test Documentation"] },
+    { icon: <Layers className="w-6 h-6" />, title: "Tools & Methodologies", tags: ["Git/GitHub", "VS Code", "Agile/Scrum", "Software Development Lifecycle (SDLC)"]}
+    
 ];
 
 
-// --- Main Skills Component ---
 const SkillsComponent = memo(function Skills() {
   const [hoveredTag, setHoveredTag] = useState(null);
   const handleTagHover = useCallback((tagId) => setHoveredTag(tagId), []);
@@ -109,7 +101,6 @@ const SkillsComponent = memo(function Skills() {
         animate="visible"
         className="flex flex-col items-center w-full"
       >
-        {/* Item 1: The header text block */}
         <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
                 <Settings2 className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
@@ -120,9 +111,8 @@ const SkillsComponent = memo(function Skills() {
             </p>
         </motion.div>
         
-        {/* Item 2: The entire skill card grid animates in as one block... */}
         <motion.div
-          variants={containerVariants} // It's also a container for its own children
+          variants={containerVariants}
           className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {SKILLS_SECTIONS.map((section) => (
