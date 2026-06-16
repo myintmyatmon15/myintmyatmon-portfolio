@@ -52,6 +52,9 @@ const ProjectCard = memo(({ project }) => {
         <p className="text-base sm:text-m text-muted-foreground leading-relaxed max-w-lg mb-4 text-justify ">
           {project.desc}
         </p>
+        <p className="text-base sm:text-m text-muted-foreground leading-relaxed max-w-lg mb-4 text-justify ">
+          {project.tech}
+        </p>
 
         <div className="flex gap-4 pt-2">
           {demoLink && (
@@ -88,11 +91,12 @@ function ProjectsComponent() {
   const projectsData = useMemo(
     () => [
       {
-        title: "Lumina Mon E-Commerce",
-        desc: "Built with Next.js 14 and TypeScript, this e-commerce app features a real-time React Context shopping cart and a premium, mobile-first Tailwind CSS design for a seamless checkout journey.",
+        title: "Lumina Mon E-Commerce Dashboard",
+        desc: "Engineered a greenfield, mobile-first e-commerce web application focused on high availability and excellent user experience. Implemented robust state management for seamless product selection, dynamic filtering, and reliable cart workflows.",
         image: "/assets/LuminaMon.png",
+        //tech:["Next.js 14", "TypeScript", "Tailwind CSS", "Redux Toolkit", "REST API Integrations", "Web Architecture "],
         links: [
-          { type: "demo", href: "https://lumina-mon-ecommerce.vercel.app/" },
+          { type: "demo", href: "https://lumina-mon-ecommerce.netlify.app/" },
           {
             type: "code",
             href: "https://github.com/myintmyatmon15/lumina-mon-ecommerce.git",
@@ -100,11 +104,12 @@ function ProjectsComponent() {
         ],
       },
       {
-        title: "CosmoFlix : Premium Media",
-        desc: "A modern movie exploration dashboard built with responsive UI components, functional routing, and public REST APIs for real-time content fetching, genre navigation, and multi-criteria searches.",
+        title: "CosmoFlix Exploration Engine",
+        desc: "Built a modern, fast-loading web dashboard for real-time media content exploration. Implemented efficient layout configurations, complex routing setups, and direct integration with public REST APIs to handle genre-based navigation and multi-criteria keyword search features. ",
         image: "/assets/CsomoFlix.png",
+        //tech:["TypeScript","Next.js","Tailwind CSS", "REST API Processing", "UI Components"],
         links: [
-          { type: "demo", href: "https://cosmoflixproject.vercel.app/" },
+          { type: "demo", href: "#" },
           {
             type: "code",
             href: "https://github.com/myintmyatmon15/Movie_Next_project.git",
