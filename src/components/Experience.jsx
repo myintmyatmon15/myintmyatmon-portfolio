@@ -32,7 +32,7 @@ const experiences = [
     role: "Full Stack Developer / QA Support",
     company: "Code Lab Technology",
     location: "Myanmar",
-    period: "Oct 2022 – Feb 2026",
+    period: "Oct 2023 – April 2026",
     logo: "/assets/logos/codelab.jpg",
     tags: [
       "ReactJS",
@@ -53,7 +53,7 @@ const experiences = [
     role: "Junior Software Engineer (Quality & Systems)",
     company: "Marelli Engineering",
     location: "Yangon, Myanmar",
-    period: "Dec 2018 – Jun 2021",
+    period: "Dec 2019 – May 2022",
     logo: "/assets/logos/Marelli-logo.jpg",
     tags: [
       

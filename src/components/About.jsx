@@ -75,7 +75,7 @@ function AboutComponent() {
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-justify ">
-            An adaptable Software Engineer with over 5 years of professional experience bridging the gap between dynamic Full Stack Web Development and rigorous QA Automation. Armed with a Bachelor of Computer Science, I specialize in building high-performance applications using React, Node.js, and TypeScript, while ensuring airtight reliability through structured automated testing and logic debugging.Passionate about writing clean, maintainable code, managing data streams, and optimizing application delivery. I love building seamless user experiences from the server logic down to the final UI pixel. Currently seeking new opportunities in Singapore to innovate and grow with a forward-thinking engineering team.
+            An adaptable Software Engineer with over 4 years of professional experience bridging the gap between dynamic Full Stack Web Development and rigorous QA Automation. Armed with a Bachelor of Computer Science, I specialize in building high-performance applications using React, Node.js, and TypeScript, while ensuring airtight reliability through structured automated testing and logic debugging.Passionate about writing clean, maintainable code, managing data streams, and optimizing application delivery. I love building seamless user experiences from the server logic down to the final UI pixel. Currently seeking new opportunities in Singapore to innovate and grow with a forward-thinking engineering team.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center items-center md:justify-start">
